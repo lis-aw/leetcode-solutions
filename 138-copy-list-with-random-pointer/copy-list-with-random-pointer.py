@@ -16,7 +16,6 @@ class Solution:
         #this loop creates a dict with key:value pairs that are "originalNode:copiedNode"
         originalNode = head
         while originalNode is not None:
-            print(originalNode.val) #debugging
             hashMap[originalNode] = Node(originalNode.val) #new key:value pair with originalNode:copiedNode (<-just has value, not next or random)
             originalNode = originalNode.next #go to the next Node
 
