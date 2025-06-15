@@ -1,16 +1,16 @@
 class Solution:
     def maximumUnits(self, boxTypes: List[List[int]], truckSize: int) -> int:
-        boxTypes.sort(key=lambda x: -x[1])
-        print(boxTypes)
+        # Sort by units per box, descending
+        boxTypes.sort(key=lambda x: x[1], reverse=True)
         result = 0
-        for boxes, unitInBox in boxTypes:
-            print(boxes, unitInBox)
-            if truckSize > boxes:
-                result += boxes * unitInBox
-                truckSize-=boxes
-            else:
-                result += truckSize * unitInBox
-                return (result)
+        
+        for boxCount, unitsPerBox in boxTypes:
+            take = min(truckSize, boxCount)
+            result += take * unitsPerBox
+            truckSize -= take
+            if truckSize == 0:
+                break
+                
         return result
 
 
