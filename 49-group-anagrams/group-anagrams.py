@@ -1,6 +1,6 @@
 from collections import defaultdict
 from collections import Counter
-class Solution:
+class Solution: #O(N*K)
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         collectAnagrams=defaultdict(list)
         for val in strs:
