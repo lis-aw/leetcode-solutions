@@ -10,14 +10,14 @@ class Solution:
             output[i]*=prefix
             prefix*=nums[i]
             i+=1
-        print(f"Prefix-Output: {output}")
+        #print(f"Prefix-Output: {output}")
 
         i=2#starting at the second to last entry
         while i <= length:
           output[-i]*=postfix
           postfix*=nums[-i]  
           i+=1
-        print(f"Postfix-Output: {output}")
+        #print(f"Postfix-Output: {output}")
         return output
         
         
